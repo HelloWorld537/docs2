@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #0078d4;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+    min-width: 100%;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 300px;
+    flex-shrink: 0;
+    background-color: #f0f0f0;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    max-height: 100vh;
+    position: fixed;
+}
+
+.sidebar h2 {
+    color: #0078d4;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a:hover, .sidebar ul li a.active {
+    background-color: #0078d4;
+    color: white;
+}
+
+.content {
+    flex: 1;
+    padding: 60px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 320px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 2px solid #000;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 20px;
+    padding: 20px;
+    font-size: 24px !important;
+    font-weight: bold;
+    text-align: left;
+}
+
+.pdf-link {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    align-items: center;
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    padding: 4px;
+}
+
+.pdf-link:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
+}
+
+span {
+    text-transform: lowercase;
+}
+
+span::first-letter {
+    text-transform: uppercase;
+}
+
+.pdf-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+    max-width: 54px !important;
+}
+
+.pdf-link:hover .pdf-icon {
+    transform: scale(1.03);
+    transition: all 0.3s;
+}
+
+a {
+    display: flex !important;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+#searchInput {
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+#searchInput:focus {
+    border-color: #0078d4;
+    outline: none;
+}
+
+.pdf-link span {
+    font-size: 14px;
+    text-align: left;
+    margin-left: 10px;
+    font-weight: bold;
+    font: bold 300 14px / 14px "Open Sans", Helvetica, Arial, Verdana, sans-serif !important;
+}
+
+.pdf-link:hover {
+    color: #0066cc;
+}
+
+table {
+    margin-bottom: 5px;
+}
+
+th, td {
+    border: 2px solid #000;
+    padding: 10px;
+    text-align: center;
+    width: 50%;
+    vertical-align: top;
+}
+
+td:first-child {
+    width: 5%;
+}
+
+th {
+    background-color: #000;
+    font-weight: bold;
+    color: #fff;
+}
+
+.content h1 {
+    color: #0078d4;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.content p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.section {
+    display: none;
+}
+
+
+@media (max-width: 1294px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        position: relative;
+        max-height: none;
+        text-align: center !important;
+    }
+    ul li a {
+        text-align: center !important;
+    }
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+    .pdf-link {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .pdf-container {
+        justify-content: center;
+    }
+    .pdf-link {
+        width: 100%;
+    }
+    .search-container {
+        padding: 10px;
+    }
+    #searchInput {
+        width: 100%;
+    }
+}
